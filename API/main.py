@@ -6,10 +6,11 @@ from io import BytesIO
 from PIL import Image
 import tensorflow as tf
 from tensorflow import keras
+import cv2
 
 app = FastAPI()
 
-MODEL = tf.keras.models.load_model("../Saved_Models/1") 
+MODEL = tf.keras.models.load_model("/Users/Aryan/Documents/CyberPunk_SIH/Saved_Models/1") 
 
 CLASS_NAMES = ['Aloevera','Amla', 'Amruta_Balli','Arali','Ashoka','Ashwagandha','Avacado','Bamboo','Basale','Betel','Betel_Nut',
  'Brahmi','Castor','Curry_Leaf','Doddapatre','Ekka','Ganike','Gauva','Geranium','Henna','Hibiscus','Honge','Insulin','Jasmine',
@@ -24,12 +25,13 @@ def read_file_as_image(data) -> np.ndarray:
 
 @app.get("/ping")
 async def ping():
-    return "Hello! I am alive"
+    return "Hello! Everyone"
 
 
 @app.post("/predict")
 async def predict( file: UploadFile = File(...) ):
-    image = read_file_as_image(await file.read())
+    img = read_file_as_image(await file.read())
+    image = cv2.resize(img,(128,128))
     img_batch = np.expand_dims(image, 0)
 
     predictions = MODEL.predict(img_batch)
