@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 from fastapi import FastAPI, File, UploadFile
+from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 import numpy as np
 from io import BytesIO
@@ -7,9 +8,20 @@ from PIL import Image
 import tensorflow as tf
 from tensorflow import keras
 import cv2
-
+import requests
 app = FastAPI()
 
+origins = [
+    "http://localhost",
+    "http://localhost:3000",
+]
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 MODEL = tf.keras.models.load_model("/Users/Aryan/Documents/CyberPunk_SIH/Saved_Models/1") 
 
 CLASS_NAMES = ['Aloevera','Amla', 'Amruta_Balli','Arali','Ashoka','Ashwagandha','Avacado','Bamboo','Basale','Betel','Betel_Nut',
@@ -21,7 +33,6 @@ CLASS_NAMES = ['Aloevera','Amla', 'Amruta_Balli','Arali','Ashoka','Ashwagandha',
 def read_file_as_image(data) -> np.ndarray:
     image = np.array(Image.open(BytesIO(data)))
     return image
-
 
 @app.get("/ping")
 async def ping():
@@ -46,3 +57,14 @@ async def predict( file: UploadFile = File(...) ):
 
 if __name__ == "__main__":
     uvicorn.run(app, host='localhost', port=8000)
+
+
+
+
+
+
+
+
+
+
+
