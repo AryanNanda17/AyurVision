@@ -9,8 +9,8 @@ import React from "react";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import { Paper, CardActionArea, CardMedia, Grid, TableContainer, Table, TableBody, TableHead, TableRow, TableCell, Button, CircularProgress } from "@material-ui/core";
-// import cblogo from "./cblogo.PNG";
-import image from "./bg.png";
+// import image from "./bgImage.jpeg";
+import image from "./BgImage.jpeg"
 import { DropzoneArea } from 'material-ui-dropzone';
 import { common } from '@material-ui/core/colors';
 import Clear from '@material-ui/icons/Clear';
@@ -69,7 +69,7 @@ const useStyles = makeStyles((theme) => ({
     margin: "auto",
     maxWidth: 400,
     height: 500,
-    backgroundColor: 'transparent',
+    backgroundColor: 'green',
     boxShadow: '0px 9px 70px 0px rgb(0 0 0 / 30%) !important',
     borderRadius: '15px',
   },
@@ -135,12 +135,12 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
   },
   appbar: {
-    background: '#be6a77',
+    background: 'green',
     boxShadow: 'none',
     color: 'white'
   },
   loader: {
-    color: '#be6a77 !important',
+    color: 'green !important',
   }
 }));
 export const ImageUpload = () => {
@@ -213,7 +213,7 @@ export const ImageUpload = () => {
       <AppBar position="static" className={classes.appbar}>
         <Toolbar>
           <Typography className={classes.title} variant="h6" noWrap>
-            Ayurvedic Plant Detection 
+            Medicinal Plants detection 
           </Typography>
           <div className={classes.grow} />
         </Toolbar>
