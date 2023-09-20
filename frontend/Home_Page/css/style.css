@@ -155,6 +155,18 @@ section{
 }
 .pictures{
     width:25rem;
+    height:25rem;
+}
+#alignment{
+    text-align:centre;
+}
+
+.detect{
+    text-align:center;
+    padding: 2rem 0;
+    padding-bottom: 3rem;
+    font-size: 2.8rem;
+    color: var(--black);
 }
 
 .heading{
