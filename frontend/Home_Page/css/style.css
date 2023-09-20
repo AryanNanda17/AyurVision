@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,400;1,500&display=swap');
+
+:root{
+    --green: green;
+    --black: #130f40;
+    --light-color: #666;
+    --box-shadow: 0.5rem 1.5rem rgba(0,0,0.1);
+    --border: 2rem solid rgba(0,0,0.1);
+    --outline: .1rem solid rgba(0,0,0.1);
+}
+
+*
+{
+    font-family: 'Poppins', sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    outline:none;
+    text-decoration:none;
+    text-transform: capitalize;
+    transition: all 0.2s linear;
+}
+
+html
+{
+    font-size:62.5%;
+    overflow-x:hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top:7rem;
+}
+
+body{
+    background: #eee;
+}
+
+/* home banner css code */
+
+section{
+    padding: 2rem 9%;
+}
+
+.Home{
+    display: flex;
+    justify-content:center;
+    border: 1px solid;
+    background: url(../images/Banner-For-Aloe-Vera-Benefits-for-Skin-How-to-Use-it.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-top:17rem;
+    padding-bottom: 10rem;
+
+}
+
+.Home .content{
+    
+    width: 63rem ;
+}
+
+.Home .content h3{
+    color: var(--black);
+    font-size: 3rem;
+
+}
+
+.Home .content h3 span{
+    color: var(--green);
+    
+}
+.header{
+    z-index: 10000;
+    border: 0px solid;
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    display : flex;
+    align-items: center;
+    justify-content:space-between;
+    padding: 2rem 9%;
+    /* change above from 2rem to 1.5rem for smaller height of navbar */
+    background: #fff;
+    --box-shadow: var(--box-shadow);
+}
+
+
+
+.header .logo{
+    font-size:2.5rem;
+    font-weight:bolder;
+    
+}
+
+.header .logo i{
+    color:var(--green);
+}
+
+.Home .content .description{
+    width:50rem;
+    
+}
+
+.Home .content .btn{
+    color:green;
+    
+    font-size: larger;
+    font-weight: bolder;
+    padding: 5rem 0;
+    transition:0.2s;
+    text-align: left;
+    
+
+
+}
+/* features code */
+
+.features .box-container{
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(25rem,1fr));
+    gap: 1.5rem;
+}
+.features .box-container .box{
+    border: 0px solid red;
+    background: #fff;
+    text-align:center;
+    
+}
+
+
+.features .box-container .box:hover{
+    box-shadow: 1px 1px 10px 4px var(--green);
+
+    
+}
+
+.features .box-container .box img{
+    margin: 1rem 0;
+    
+}
+
+.features .box-container .box h3
+{
+    font-size:2.5rem;
+    line-height:1.8;
+    color: var(--black);
+    font-weight:bolder;
+}
+
+.features .box-container .box p
+{
+    font-size: 1.2rem;
+    line-height:1.8;
+    color: var(--light-color);
+    padding: 1rem;
+
+}
+.pictures{
+    width:25rem;
+}
+
+.heading{
+    text-align:center;
+    padding: 2rem 0;
+    padding-bottom: 3rem;
+    font-size: 2.85rem;
+    color: var(--black);
+}
+
+.heading span{
+    background: var(--green);
+    color:#fff;
+    display: inline-block;
+    padding:  0.5rem 3rem;
+    clip-path:polygon(100% 0,93% 50%,100% 99%,0% 100%,7% 50%,0% 0%);
+
+}
+
+.Home .content a{
+    margin-top: 130px;
+}
+.Home .content .btn:hover{
+    opacity: 0.7;
+    
+}
+.header .navbar a{
+    font-size: 1.2rem;
+    margin:0 1rem;
+    color: var(--black);
+}
+
+.header .navbar a:hover {
+    color: var(--green);
+}
+
+.aboutus .aboutus-slider
+{
+    padding: 1rem;
+}
+
+.aboutus .aboutus-slider:first-child
+{
+margin-bottom:2rem;
+}
+
+.aboutus .aboutus-slider .box
+{
+    background: #fff;
+    border-radius: .5rem;
+    text-align: center;
+    padding: 3rem 2rem;
+    outline-offset:-1rem;
+}
+
+.features .aboutus-slider .box:hover{
+    box-shadow: 1px 1px 10px 4px var(--green);
+}
+
